@@ -1,0 +1,16 @@
+{
+  "name": "@stanlemon/couchdb-userdb",
+  "version": "0.0.1",
+  "description": "Script for monitoring changes to the users document in CouchDB can creating per user databases. Similar to the userdb plugin, but standalone such that it could be used with Cloudant.",
+  "bin": "bin/couchdb-userdb",
+  "main": "src/couchdb-user.js",
+  "author": "Stan Lemon <stanlemon@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stanlemon/js-libs.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "nano": "^8.1.0"
+  }
+}

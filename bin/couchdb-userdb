@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+const { COUCHDB_URL } = process.env;
+
+if (!COUCHDB_URL) {
+    throw new Error(
+        'You must specify a couchdb instance via the COUCHDB_URL environment variable'
+    );
+}
+
+const nano = require('nano');
+const { syncUserDbs, followUserDbChanges } = require('../src/couchdb-userdb');
+
+const couchdb = nano(COUCHDB_URL);
+
+syncUserDbs(couchdb);
+followUserDbChanges(couchdb);
