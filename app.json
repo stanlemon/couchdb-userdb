@@ -6,5 +6,10 @@
         "node",
         "couchdb",
         "pouchdb"
-    ]
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1
+        }
+    }
 }
