@@ -24,4 +24,6 @@ You can deploy this script to Heroku and have it manage user databases for you. 
 heroku ps:scale web=0 worker=1
 ```
 
+You will also need to set the `COUCHDB_URL` config variable and then restart your dyno for it to take effect.
+
 _This works great with CouchDB instances like the ones from Cloudant!_
