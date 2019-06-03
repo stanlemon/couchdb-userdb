@@ -10,6 +10,9 @@
     "url": "git://github.com/stanlemon/js-libs.git"
   },
   "license": "MIT",
+  "scripts": {
+    "start": "./bin/couchdb-userdb"
+  },
   "dependencies": {
     "nano": "^8.1.0"
   }

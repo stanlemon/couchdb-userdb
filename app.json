@@ -1,0 +1,10 @@
+{
+    "name": "CouchDB User DB Watcher",
+    "description": "A tool for monitoring changes to the users document in CouchDB can creating per user databases.",
+    "repository": "https://github.com/stanlemon/couchdb-userdb",
+    "keywords": [
+        "node",
+        "couchdb",
+        "pouchdb"
+    ]
+}

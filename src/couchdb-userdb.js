@@ -57,22 +57,15 @@ function followUserDbChanges(couchdb) {
 
         console.log('Change received for user ' + username);
 
-        couchdb.db.get(userDb, (err, body) => {
-            if (err) {
-                console.log('An error has occurred', err);
-                return;
-            }
+        // User database does not exist and this is not a delete
+        if (!isDeleted) {
+            createUserDb(couchdb, username);
+        }
 
-            // User database does not exist and this is not a delete
-            if (!isDeleted && err && err.statusCode === 404) {
-                createUserDb(couchdb, username);
-            }
-
-            // User database exists and this is a delete
-            if (isDeleted && (!err || (err && err.statusCode !== 404))) {
-                destroyUserDb(couchdb, username);
-            }
-        });
+        // User database exists and this is a delete
+        if (isDeleted) {
+            destroyUserDb(couchdb, username);
+        }
     });
 
     feed.follow();
