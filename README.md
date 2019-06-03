@@ -13,3 +13,15 @@ To use this script set an environment variable *COUCHDB_URL* to your couchdb ins
 ```shell
 COUCHDB_URL=http://username:password@mycouchdb.instance npx @stanlemon/couchdb-userdb 
 ```
+
+## Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+You can deploy this script to Heroku and have it manage user databases for you. Use the link above, and then make sure you adjust your scaling to create a worker dyno. By default a web dyno will be created, but it will crash as port binding does not occur.
+
+```shell
+heroku ps:scale web=0 worker=1
+```
+
+_This works great with CouchDB instances like the ones from Cloudant!_
