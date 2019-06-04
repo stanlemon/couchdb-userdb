@@ -9,7 +9,7 @@ function makeUserName(userDb) {
 function syncUserDbs(couchdb) {
     const userDb = couchdb.use('_users');
 
-    Promise.all([
+    return Promise.all([
         // List every database on the server
         couchdb.db.list(),
         // List every document in the _users db

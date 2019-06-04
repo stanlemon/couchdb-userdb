@@ -11,9 +11,23 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "./bin/couchdb-userdb"
+    "start": "./bin/couchdb-userdb",
+    "test": "jest"
+  },
+  "jest": {
+    "roots": [
+      "./test/"
+    ]
   },
   "dependencies": {
     "nano": "^8.1.0"
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "express-pouchdb": "^4.1.0",
+    "jest": "^24.8.0",
+    "pouchdb": "^7.0.0",
+    "pouchdb-adapter-memory": "^7.0.0",
+    "wait-for-expect": "^1.2.0"
   }
 }
