@@ -101,15 +101,17 @@ function createUserDb(couchdb, username) {
             return;
         }
 
+        const userName = makeUserName(userDb);
+
         const permissions = {
             // This is here specifically for Cloudant, which will use it's own permissions system without this attribute
             couchdb_auth_only: true,
             admins: {
-                names: [],
+                names: [userName],
                 roles: [],
             },
             members: {
-                names: [makeUserName(userDb)],
+                names: [userName],
                 roles: [],
             },
         };
