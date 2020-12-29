@@ -12,6 +12,7 @@ out/
 
 ## PouchDB data
 local/
+config.json
 
 ## Jest Snapshots
 __snapshots__/
