@@ -13,13 +13,12 @@ const nano = require("nano")(url, {
 });
 
 describe("couchdb-userdb", () => {
-    beforeAll(async done => {
+    beforeAll(async () => {
         await waitForExpect(async () => {
             console.log("Checking status...");
             const status = await checkStatus(url);
             expect(status).not.toBe(false);
         })
-        done();
     });
 
     afterAll(done => {
@@ -28,7 +27,7 @@ describe("couchdb-userdb", () => {
         });
     });
 
-    it("creates a database when a user doc is inserted, then deletes is", async (done) => {
+    it("creates a database when a user doc is inserted, then deletes is", async () => {
         const allDbs = await nano.db.list();
 
         const usersDb = nano.use('_users');
@@ -66,7 +65,5 @@ describe("couchdb-userdb", () => {
 
             expect(info === 'no_db_file');
         });
-
-        done();
     });
 });
