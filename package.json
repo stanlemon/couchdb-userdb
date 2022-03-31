@@ -21,7 +21,7 @@
     ]
   },
   "dependencies": {
-    "nano": "^9.0.5"
+    "nano": "^10.0.0"
   },
   "devDependencies": {
     "express": "^4.17.1",
